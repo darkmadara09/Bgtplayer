@@ -88,7 +88,7 @@ async def gen_thumb(videoid,user_id):
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(5))
         enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(0.5)
+        background = enhancer.enhance(0.8)
         y=changeImageSize(200,200,circle(youtube)) 
         background.paste(y,(45,225),mask=y)
         a=changeImageSize(200,200,circle(xp)) 
@@ -96,7 +96,12 @@ async def gen_thumb(videoid,user_id):
         draw = ImageDraw.Draw(background)
         arial = ImageFont.truetype("Love/font2.ttf", 30)
         font = ImageFont.truetype("Love/font.ttf", 30)
-        draw.text((1110, 8), unidecode(app.name), fill="white", font=arial)
+        draw.text(
+            (10, 10),
+            f"SHALINI X MUSIC",
+            (255, 255, 255),
+            font=arial,
+        )
         draw.text(
                 (55, 560),
                 f"{channel} | {views[:23]}",
