@@ -28,7 +28,7 @@ def start_pannel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
             )
         ],
         [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID
+            InlineKeyboardButton(text=_["maintainer"], user_id=config.OWNER_ID
             )
         ]
      ]
@@ -58,7 +58,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
             )
         ],
         [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID
+            InlineKeyboardButton(text=_["maintainer"], user_id=config.OWNER_ID
             )
         ]
      ]
