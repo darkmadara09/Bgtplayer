@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from Bikash import config
 from Bikash.utils.formatters import time_to_seconds
-from Bikash.config import SUPPORT_GROUP
+
 
 ## After Edits with Timer Bar
 
@@ -12,53 +12,75 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    umm = math.floor(percentage)
-    if 0 < umm <= 10:
-        bar = "♡—————————"
-    elif 10 < umm < 20:
-        bar = "—♡————————"
-    elif 20 <= umm < 30:
-        bar = "——♡———————"
-    elif 30 <= umm < 40:
-        bar = "———♡——————"
-    elif 40 <= umm < 50:
-        bar = "————♡—————"
-    elif 50 <= umm < 60:
-        bar = "—————♡————"
-    elif 60 <= umm < 70:
-        bar = "——————♡———"
-    elif 70 <= umm < 80:
-        bar = "———————♡——"
-    elif 80 <= umm < 95:
-        bar = "————————♡—"
+    bikash = math.floor(percentage)
+    if 0 < bikash <= 10:
+        bar = "bgt════════"
+    elif 10 < bikash < 20:
+        bar = "═bgt═══════"
+    elif 20 <= bikash < 30:
+        bar = "══bgt══════"
+    elif 30 <= bikash < 40:
+        bar = "═══bgt═════"
+    elif 40 <= bikash < 50:
+        bar = "════bgt════"
+    elif 50 <= bikash < 60:
+        bar = "═════bgt═══"
+    elif 60 <= bikash < 70:
+        bar = "══════bgt══"
+    elif 70 <= bikash < 80:
+        bar = "═══════bgt═"
+    elif 80 <= bikash < 95:
+        bar = "════════bgt"
     else:
-        bar = "—————————♡"
+        bar = "════════BGT"
 
     buttons = [
-                [
+        [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
         [
-InlineKeyboardButton(text="ᴘᴀᴜꜱᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
-InlineKeyboardButton(text="ʀᴇꜱᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-          [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID
+            InlineKeyboardButton(
+                text="▶️",
+                callback_data=f"ADMIN Pause|{chat_id}",
             ),
             InlineKeyboardButton(
-
-                text="ɢʀᴏᴜᴘ",
-
-                url=f"{SUPPORT_CHAT}",
-
+                text="⏸️",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏏️",
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text="⏩",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏹️",
+                callback_data=f"ADMIN Stop|{chat_id}",
             ),
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+        [
+            InlineKeyboardButton(
+                text="💖 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 💖", url=config.SUPPORT_CHANNEL
+            ),
+            InlineKeyboardButton(
+                text="💖 𝐆𝐫𝐨𝐮𝐩 💖", url=config.SUPPORT_GROUP
+            )
+        ],
+        [           
+            InlineKeyboardButton(
+                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+            )
+        ],
     ]
     return buttons
 
@@ -67,103 +89,167 @@ def telegram_markup_timer(_, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    umm = math.floor(percentage)
-    if 0 < umm <= 10:
-        bar = "♡—————————"
-    elif 10 < umm < 20:
-        bar = "—♡————————"
-    elif 20 <= umm < 30:
-        bar = "——♡———————"
-    elif 30 <= umm < 40:
-        bar = "———♡——————"
-    elif 40 <= umm < 50:
-        bar = "————♡—————"
-    elif 50 <= umm < 60:
-        bar = "—————♡————"
-    elif 60 <= umm < 70:
-        bar = "——————♡———"
-    elif 70 <= umm < 80:
-        bar = "———————♡——"
-    elif 80 <= umm < 95:
-        bar = "————————♡—"
+    bikash = math.floor(percentage)
+    if 0 < bikash <= 10:
+        bar = "bgt════════"
+    elif 10 < bikash < 20:
+        bar = "═bgt═══════"
+    elif 20 <= bikash < 30:
+        bar = "══bgt══════"
+    elif 30 <= bikash < 40:
+        bar = "═══bgt═════"
+    elif 40 <= bikash < 50:
+        bar = "════bgt════"
+    elif 50 <= bikash < 60:
+        bar = "═════bgt═══"
+    elif 60 <= bikash < 70:
+        bar = "══════bgt══"
+    elif 70 <= bikash < 80:
+        bar = "═══════bgt═"
+    elif 80 <= bikash < 95:
+        bar = "════════bgt"
     else:
-        bar = "—————————♡"
+        bar = "════════BGT"
 
     buttons = [
-                [
+        [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
         [
-InlineKeyboardButton(text="ᴘᴀᴜꜱᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
-InlineKeyboardButton(text="ʀᴇꜱᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-          [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID
+            InlineKeyboardButton(
+                text="▶️",
+                callback_data=f"ADMIN Pause|{chat_id}",
             ),
             InlineKeyboardButton(
-
-                text="ɢʀᴏᴜᴘ",
-
-                url=f"{SUPPORT_CHAT}",
-
+                text="⏸️",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏏️",
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text="⏩",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏹️",
+                callback_data=f"ADMIN Stop|{chat_id}",
             ),
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+        [
+            InlineKeyboardButton(
+                text="💖 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 💖", url=config.SUPPORT_CHANNEL
+            ),
+            InlineKeyboardButton(
+                text="💖 𝐆𝐫𝐨𝐮𝐩 💖", url=config.SUPPORT_GROUP
+            )
+        ],
+        [           
+            InlineKeyboardButton(
+                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+            )
+        ],
     ]
     return buttons
 
 
 def stream_markup(_, videoid, chat_id):
     buttons = [
-          
         [
-InlineKeyboardButton(text="ᴘᴀᴜꜱᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
-InlineKeyboardButton(text="ʀᴇꜱᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-          [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID
+            InlineKeyboardButton(
+                text="💖 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 💖", url=config.SUPPORT_CHANNEL
             ),
             InlineKeyboardButton(
-
-                text="ɢʀᴏᴜᴘ",
-
-                url=f"{SUPPORT_CHAT}",
-
+                text="💖 𝐆𝐫𝐨𝐮𝐩 💖", url=config.SUPPORT_GROUP
+            )
+        ],
+        [           
+            InlineKeyboardButton(
+                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="▶️",
+                callback_data=f"ADMIN Pause|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏸️",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏏️",
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text="⏩",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏹️",
+                callback_data=f"ADMIN Stop|{chat_id}",
             ),
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+        [
+            InlineKeyboardButton(
+                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+            )
+        ],
     ]
     return buttons
 
 
 def telegram_markup(_, chat_id):
     buttons = [
-                
         [
-InlineKeyboardButton(text="ᴘᴀᴜꜱᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
-InlineKeyboardButton(text="ʀᴇꜱᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-          [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID
+            InlineKeyboardButton(
+                text="💖 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 💖", url=config.SUPPORT_CHANNEL
             ),
             InlineKeyboardButton(
-
-                text="ɢʀᴏᴜᴘ",
-
-                url=f"{SUPPORT_CHAT}",
-
+                text="💖 𝐆𝐫𝐨𝐮𝐩 💖", url=config.SUPPORT_GROUP
+            )
+        ],
+        [           
+            InlineKeyboardButton(
+                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="▶️",
+                callback_data=f"ADMIN Pause|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏸️",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏏️",
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text="⏩",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏹️",
+                callback_data=f"ADMIN Stop|{chat_id}",
             ),
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+        [
+            InlineKeyboardButton(
+                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+            )
+        ],
     ]
     return buttons
 
@@ -296,49 +382,91 @@ close_keyboard = InlineKeyboardMarkup(
 
 def queue_markup(_, videoid, chat_id):
     buttons = [
-                
         [
-InlineKeyboardButton(text="ᴘᴀᴜꜱᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
-InlineKeyboardButton(text="ʀᴇꜱᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-          [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID
+            InlineKeyboardButton(
+                text="💖 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 💖", url=config.SUPPORT_CHANNEL
             ),
             InlineKeyboardButton(
-
-                text="ɢʀᴏᴜᴘ",
-
-                url=f"{SUPPORT_CHAT}",
-
+                text="💖 𝐆𝐫𝐨𝐮𝐩 💖", url=config.SUPPORT_GROUP
+            )
+        ],
+        [           
+            InlineKeyboardButton(
+                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="▶️",
+                callback_data=f"ADMIN Pause|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏸️",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏏️",
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text="⏩",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏹️",
+                callback_data=f"ADMIN Stop|{chat_id}",
             ),
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+        [
+            InlineKeyboardButton(
+                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+            )
+        ],
     ]
     return buttons
 
 
 def telegram_markup(_, videoid, chat_id):
     buttons = [
-                
         [
-InlineKeyboardButton(text="ᴘᴀᴜꜱᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
-InlineKeyboardButton(text="ʀᴇꜱᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
-InlineKeyboardButton(text="ꜱᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-          [
-            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID
+            InlineKeyboardButton(
+                text="💖 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 💖", url=config.SUPPORT_CHANNEL
             ),
             InlineKeyboardButton(
-
-                text="ɢʀᴏᴜᴘ",
-
-                url=f"{SUPPORT_CHAT}",
-
+                text="💖 𝐆𝐫𝐨𝐮𝐩 💖", url=config.SUPPORT_GROUP
+            )
+        ],
+        [           
+            InlineKeyboardButton(
+                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                text="▶️",
+                callback_data=f"ADMIN Pause|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏸️",
+                callback_data=f"ADMIN Resume|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏏️",
+                callback_data=f"add_playlist {videoid}",
+            ),
+            InlineKeyboardButton(
+                text="⏩",
+                callback_data=f"ADMIN Skip|{chat_id}",
+            ),
+            InlineKeyboardButton(
+                text="⏹️",
+                callback_data=f"ADMIN Stop|{chat_id}",
             ),
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+        [
+            InlineKeyboardButton(
+                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
+            )
+        ],
     ]
     return buttons
