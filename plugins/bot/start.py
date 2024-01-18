@@ -130,16 +130,6 @@ async def start_comm(client, message: Message, _):
                 )
         if name[0:3] == "del":
             await del_plist_msg(client=client, message=message, _=_)
-        if name == "verify":
-            await message.reply_text(f"𝐇𝐞𝐲 {message.from_user.first_name},\n𝐓𝐡𝐚𝐧𝐤𝐬 𝐅𝐨𝐫 𝐕𝐞𝐫𝐢𝐟𝐲𝐢𝐧𝐠 𝐘𝐨𝐮𝐫𝐬𝐞𝐥𝐟 𝐈𝐧 {config.MUSIC_BOT_NAME}, 𝐍𝐨𝐰 𝐘𝐨𝐮 𝐂𝐚𝐧 𝐆𝐨 𝐁𝐚𝐜𝐤 & 𝐒𝐭𝐚𝐫𝐭 𝐔𝐬𝐢𝐧𝐠 𝐌𝐞.")
-            if await is_on_off(config.LOG):
-                sender_id = message.from_user.id
-                sender_name = message.from_user.first_name
-                return await app.send_message(
-                    config.LOG_GROUP_ID,
-                    f"{message.from_user.mention} 𝐉𝐮𝐬𝐭 𝐒𝐭𝐚𝐫𝐭𝐞𝐝 𝐓𝐡𝐞 𝐁𝐨𝐭 𝐓𝐨 <code> 𝐕𝐞𝐫𝐢𝐟𝐲 𝐇𝐢𝐦𝐬𝐞𝐥𝐟</code>\n\n**𝐔𝐬𝐞𝐫 𝐈𝐝:** {sender_id}\n**𝐔𝐬𝐞𝐫𝐧𝐚𝐦𝐞:** {sender_name}",
-                )
-            return
         if name[0:3] == "inf":
             m = await message.reply_text("🔎")
             query = (str(name)).replace("info_", "", 1)
