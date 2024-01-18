@@ -12,27 +12,27 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    bikash = math.floor(percentage)
-    if 0 < bikash <= 10:
-        bar = "bgt════════"
-    elif 10 < bikash < 20:
-        bar = "═bgt═══════"
-    elif 20 <= bikash < 30:
-        bar = "══bgt══════"
-    elif 30 <= bikash < 40:
-        bar = "═══bgt═════"
-    elif 40 <= bikash < 50:
-        bar = "════bgt════"
-    elif 50 <= bikash < 60:
-        bar = "═════bgt═══"
-    elif 60 <= bikash < 70:
-        bar = "══════bgt══"
-    elif 70 <= bikash < 80:
-        bar = "═══════bgt═"
-    elif 80 <= bikash < 95:
-        bar = "════════bgt"
+    umm = math.floor(percentage)
+    if 0 < umm <= 10:
+        bar = "♡—————————"
+    elif 10 < umm < 20:
+        bar = "—♡————————"
+    elif 20 <= umm < 30:
+        bar = "——♡———————"
+    elif 30 <= umm < 40:
+        bar = "———♡——————"
+    elif 40 <= umm < 50:
+        bar = "————♡—————"
+    elif 50 <= umm < 60:
+        bar = "—————♡————"
+    elif 60 <= umm < 70:
+        bar = "——————♡———"
+    elif 70 <= umm < 80:
+        bar = "———————♡——"
+    elif 80 <= umm < 95:
+        bar = "————————♡—"
     else:
-        bar = "════════BGT"
+        bar = "—————————♡"
 
     buttons = [
                 [
@@ -67,27 +67,27 @@ def telegram_markup_timer(_, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    bikash = math.floor(percentage)
-    if 0 < bikash <= 10:
-        bar = "bgt════════"
-    elif 10 < bikash < 20:
-        bar = "═bgt═══════"
-    elif 20 <= bikash < 30:
-        bar = "══bgt══════"
-    elif 30 <= bikash < 40:
-        bar = "═══bgt═════"
-    elif 40 <= bikash < 50:
-        bar = "════bgt════"
-    elif 50 <= bikash < 60:
-        bar = "═════bgt═══"
-    elif 60 <= bikash < 70:
-        bar = "══════bgt══"
-    elif 70 <= bikash < 80:
-        bar = "═══════bgt═"
-    elif 80 <= bikash < 95:
-        bar = "════════bgt"
+    umm = math.floor(percentage)
+   if 0 < umm <= 10:
+        bar = "♡—————————"
+    elif 10 < umm < 20:
+        bar = "—♡————————"
+    elif 20 <= umm < 30:
+        bar = "——♡———————"
+    elif 30 <= umm < 40:
+        bar = "———♡——————"
+    elif 40 <= umm < 50:
+        bar = "————♡—————"
+    elif 50 <= umm < 60:
+        bar = "—————♡————"
+    elif 60 <= umm < 70:
+        bar = "——————♡———"
+    elif 70 <= umm < 80:
+        bar = "———————♡——"
+    elif 80 <= umm < 95:
+        bar = "————————♡—"
     else:
-        bar = "════════BGT"
+        bar = "—————————♡"
 
     buttons = [
                 [
