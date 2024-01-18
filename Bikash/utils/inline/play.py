@@ -4,7 +4,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from Bikash import config
 from Bikash.utils.formatters import time_to_seconds
-from Bikash.config import SUPPORT_CHAT
+from Bikash.config import SUPPORT_GROUP
 
 ## After Edits with Timer Bar
 
