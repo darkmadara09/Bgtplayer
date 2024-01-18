@@ -9,7 +9,7 @@ from unidecode import unidecode
 from youtubesearchpython.__future__ import VideosSearch
 
 from Bikash import app
-from Bikahs.config import YOUTUBE_IMG_URL
+from Bikash.config import YOUTUBE_IMG_URL
 
 
 def changeImageSize(maxWidth, maxHeight, image):
