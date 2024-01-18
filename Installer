@@ -10,6 +10,7 @@ httpx
 lyricsgenius
 motor
 OpsAi
+numpy
 pillow==9.5.0
 psutil
 py-tgcalls
