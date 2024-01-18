@@ -24,6 +24,7 @@ search-engine-parser
 speedtest-cli
 spotipy
 tgcrypto
+unidecode
 youtube-search
 youtube-search-python
 yt-dlp
