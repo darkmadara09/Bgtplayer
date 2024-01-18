@@ -42,46 +42,21 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 callback_data="GetTimer",
             )
         ],
-        [
-            InlineKeyboardButton(
-                text="▶️",
-                callback_data=f"ADMIN Pause|{chat_id}",
+       [
+InlineKeyboardButton(text="ᴘᴀᴜꜱᴇ", callback_data=f"ADMIN Pause|{chat_id}"),
+InlineKeyboardButton(text="ʀᴇꜱᴜᴍᴇ", callback_data=f"ADMIN Resume|{chat_id}"),
+InlineKeyboardButton(text="ꜱᴋɪᴘ", callback_data=f"ADMIN Skip|{chat_id}"),
+InlineKeyboardButton(text="ꜱᴛᴏᴘ", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+          [
+            InlineKeyboardButton(text=_["S_B_5"], user_id=config.OWNER_ID
             ),
             InlineKeyboardButton(
-                text="⏸️",
-                callback_data=f"ADMIN Resume|{chat_id}",
-            ),
-            InlineKeyboardButton(
-                text="⏏️",
+                text="ᴩʟᴀʏʟɪsᴛ",
                 callback_data=f"add_playlist {videoid}",
-            ),
-            InlineKeyboardButton(
-                text="⏩",
-                callback_data=f"ADMIN Skip|{chat_id}",
-            ),
-            InlineKeyboardButton(
-                text="⏹️",
-                callback_data=f"ADMIN Stop|{chat_id}",
-            ),
+)
         ],
-        [
-            InlineKeyboardButton(
-                text="💖 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 💖", url=config.SUPPORT_CHANNEL
-            ),
-            InlineKeyboardButton(
-                text="💖 𝐆𝐫𝐨𝐮𝐩 💖", url=config.SUPPORT_GROUP
-            )
-        ],
-        [           
-            InlineKeyboardButton(
-                text="📱 𝐘𝐨𝐮𝐭𝐮𝐛𝐞 📱", url=f"https://youtube.com/@BikashGadgetsTech"
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text="❌ 𝐂𝐥𝐨𝐬𝐞 ❌", callback_data="close"
-            )
-        ],
+        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
 
