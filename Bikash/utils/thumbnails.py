@@ -102,6 +102,12 @@ async def gen_thumb(videoid,user_id):
             font=font,
         )
         draw.text(
+            (1000, 380),
+            f"SHALINI X MUSIC",
+            (280, 280, 280),
+            font=font,
+        )
+        draw.text(
                 (55, 560),
                 f"{channel} | {views[:23]}",
                 (255, 255, 255),
