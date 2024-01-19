@@ -4,7 +4,7 @@ import re
 import aiofiles
 import aiohttp
 import numpy as np
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageFont, ImageOps
 from unidecode import unidecode
 from youtubesearchpython.__future__ import VideosSearch
 
@@ -98,6 +98,7 @@ async def gen_thumb(videoid,user_id):
         draw.text(
             (10, 10),
             f"SHALINI X MUSIC",
+            fill="green",
             (280, 280, 280),
             font=font,
         )
