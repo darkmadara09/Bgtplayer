@@ -105,7 +105,7 @@ async def gen_thumb(videoid,user_id):
                 (55, 560),
                 f"{channel} | {views[:23]}",
                 (255, 255, 255),
-                font=arial,
+                font=font,
             )
         draw.text(
                 (57, 600),
@@ -129,13 +129,13 @@ async def gen_thumb(videoid,user_id):
                 (36, 685),
                 "00:00",
                 (255, 255, 255),
-                font=arial,
+                font=font,
             )
         draw.text(
                 (1185, 685),
                 f"{duration[:23]}",
                 (255, 255, 255),
-                font=arial,
+                font=font,
             )
         try:
             os.remove(f"cache/thumb{videoid}.png")
