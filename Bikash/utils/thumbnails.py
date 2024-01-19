@@ -86,9 +86,9 @@ async def gen_thumb(videoid,user_id):
         youtube = Image.open(f"cache/thumb{videoid}.png")
         image1 = changeImageSize(1280, 720, youtube)
         image2 = image1.convert("RGBA")
-        background = image2.filter(filter=ImageFilter.BoxBlur(5))
+        background = image2.filter(filter=ImageFilter.BoxBlur(2))
         enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(0.8)
+        background = enhancer.enhance(1)
         y=changeImageSize(200,200,circle(youtube)) 
         background.paste(y,(45,225),mask=y)
         a=changeImageSize(200,200,circle(xp)) 
@@ -100,7 +100,7 @@ async def gen_thumb(videoid,user_id):
             (10, 10),
             f"SHALINI X MUSIC",
             (255, 255, 255),
-            font=arial,
+            font=font,
         )
         draw.text(
                 (55, 560),
