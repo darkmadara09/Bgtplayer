@@ -98,13 +98,13 @@ async def gen_thumb(videoid,user_id):
         draw.text(
             (10, 10),
             f"SHALINI X MUSIC",
-            fill="green",
             (280, 280, 280),
             font=font,
         )
         draw.text(
             (1000, 380),
             f"REQUESTED BY",
+            fill="Blue",
             (300, 300, 300),
             font=font,
         )
