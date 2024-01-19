@@ -90,7 +90,6 @@ async def gen_thumb(videoid,user_id):
         background = image2.filter(filter=ImageFilter.BoxBlur(1))
         enhancer = ImageEnhance.Brightness(background)
         background = enhancer.enhance(1)
-        background.paste(y,(45,225),mask=y)
         a=changeImageSize(200,200,circle(xp)) 
         background.paste(a,(1045,225),mask=a)
         draw = ImageDraw.Draw(background)
