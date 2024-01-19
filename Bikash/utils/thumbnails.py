@@ -104,8 +104,7 @@ async def gen_thumb(videoid,user_id):
         draw.text(
             (1000, 380),
             f"REQUESTED BY",
-            (320, 320, 320),
-            fill="green",
+            (300, 300, 300),
             font=font,
         )
         draw.text(
