@@ -10,6 +10,8 @@ from Love.database.weldb import *
 from Bikash.config import LOG_GROUP_ID
 
 COMMAND_HANDLER = ". /".split()
+LOGGER = getLogger(name)
+
 LOGGER = getLogger(__name__)
 
 class temp:
@@ -47,11 +49,10 @@ def welcomepic(pic, user, chat, id, uname):
     draw.text((30,430), f"USERNAME : {uname}", fill=(255,255,255),font=font)
     pfp_position = (770, 140)  
     background.paste(pfp, pfp_position, pfp)  
-    os.remove(f"cache/welcome#{id}.png")
     background.save(
-        f"cache/welcome#{id}.png"
+        f"downloads/welcome#{id}.png"
     )
-    return f"cache/welcome#{id}.png"
+    return f"downloads/welcome#{id}.png"
 
 
 @app.on_message(filters.command("swelcome", COMMAND_HANDLER) & ~filters.private)
@@ -103,7 +104,7 @@ async def greet_group(_, member: ChatMemberUpdated):
             user.photo.big_file_id, file_name=f"pp{user.id}.png"
         )
     except AttributeError:
-        pic = "Love/profilepic.jpg"
+        pic = "HuTao/resources/profilepic.jpg"
     if (temp.MELCOW).get(f"welcome-{member.chat.id}") is not None:
         try:
             await temp.MELCOW[f"welcome-{member.chat.id}"].delete()
@@ -149,3 +150,4 @@ USERNAME: @{message.chat.username}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
 """)
             
+
