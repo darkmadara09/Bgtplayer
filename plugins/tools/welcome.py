@@ -6,8 +6,8 @@ from pyrogram.types import *
 from logging import getLogger
 
 from Bikash import app
-from MukeshRobot.database.wel_db import *
-from Bikash.config import 
+from Love.database.wel_db import *
+from Bikash.config import LOG_GROUP_ID
 
 COMMAND_HANDLER = ". /".split()
 LOGGER = getLogger(__name__)
