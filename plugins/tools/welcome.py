@@ -32,15 +32,15 @@ def circle(pfp, size=(450, 450)):
     return pfp
 
 def welcomepic(pic, user, chat, id, uname):
-    background = Image.open("MukeshRobot/resources/bg.jpg")
+    background = Image.open("Love/bg.jpg")
     pfp = Image.open(pic).convert("RGBA")
     pfp = circle(pfp)
     pfp = pfp.resize(
         (450, 450)
     ) 
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype('MukeshRobot/resources/SwanseaBold-D0ox.ttf', size=40)
-    welcome_font = ImageFont.truetype('MukeshRobot/resources/SwanseaBold-D0ox.ttf', size=60)
+    font = ImageFont.truetype('Love/SwanseaBold-D0ox.ttf', size=40)
+    welcome_font = ImageFont.truetype('Love/SwanseaBold-D0ox.ttf', size=60)
     draw.text((30, 300), f'NAME: {unidecode(user)}', fill=(255, 255, 255), font=font)
     draw.text((30, 370), f'ID: {id}', fill=(255, 255, 255), font=font)
     draw.text((30, 40), f"Welcome to {unidecode(chat)}", fill=(225, 225, 225), font=welcome_font)
@@ -103,7 +103,7 @@ async def greet_group(_, member: ChatMemberUpdated):
             user.photo.big_file_id, file_name=f"pp{user.id}.png"
         )
     except AttributeError:
-        pic = "MukeshRobot/resources/profilepic.jpg"
+        pic = "Love/profilepic.jpg"
     if (temp.MELCOW).get(f"welcome-{member.chat.id}") is not None:
         try:
             await temp.MELCOW[f"welcome-{member.chat.id}"].delete()
@@ -140,7 +140,7 @@ USERNAME: @{user.username}
 async def bot_wel(_, message):
     for u in message.new_chat_members:
         if u.id == app.me.id:
-            await app.send_message(EVENT_LOGS, f"""
+            await app.send_message(LOG_GROUP_ID, f"""
 **NEW GROUP
 ➖➖➖➖➖➖➖➖➖➖➖➖
 NAME: {message.chat.title}
