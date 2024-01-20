@@ -6,7 +6,7 @@ from pyrogram.types import *
 from logging import getLogger
 
 from Bikash import app
-from Love.database.wel_db import *
+from Love.database.weldb import *
 from Bikash.config import LOG_GROUP_ID
 
 COMMAND_HANDLER = ". /".split()
