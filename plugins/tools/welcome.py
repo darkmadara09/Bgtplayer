@@ -4,7 +4,7 @@ from PIL import ImageDraw, Image, ImageFont, ImageChops
 from pyrogram import *
 from pyrogram.types import *
 from logging import getLogger
-from Bikash import Logger
+from Bikash import LOGGER
 from Bikash import app 
 from Love.database.weldb import *
 from Bikash.config import LOG_GROUP_ID
