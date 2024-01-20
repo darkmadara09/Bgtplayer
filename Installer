@@ -1,4 +1,5 @@
 aiofiles
+async_pymongo
 aiohttp
 asyncio
 dnspython
