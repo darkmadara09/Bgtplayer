@@ -12,7 +12,6 @@ from Bikash.config import LOG_GROUP_ID
 COMMAND_HANDLER = ". /".split()
 LOGGER = getLogger(name)
 
-LOGGER = getLogger(__name__)
 
 class temp:
     ME = None
