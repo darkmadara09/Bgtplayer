@@ -1,6 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import Message
-from Bikash.plugins.tools.pretenderdb import impo_off, impo_on, check_pretender, add_userdata, get_userdata, usr_data
+from Love.database.pretenderdb import impo_off, impo_on, check_pretender, add_userdata, get_userdata, usr_data
 from Bikash import app
 
 
