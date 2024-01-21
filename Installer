@@ -29,3 +29,4 @@ unidecode
 youtube-search
 youtube-search-python
 yt-dlp
+motor==3.3.2
